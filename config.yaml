@@ -1,0 +1,4 @@
+bag_dir: /home/ubuntu-2004/SLAM_datasets/EuRoC/MH_03_medium.bag
+img_topic: /cam0/image_raw
+
+threshold: 0.4
