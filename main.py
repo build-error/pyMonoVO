@@ -70,7 +70,7 @@ def main():
             try:
                 R, t = camera_pose_estimation(pts1, pts2, fs)
                 q = Rotation.from_matrix(R).as_quat()
-                f.write(f"{ts1} {t[0][0]} {t[1][0]} {t[2][0]} {float(q[0])}, {float(q[1])} {float(q[2])} {float(q[3])}\n")
+                f.write(f"{float(ts1)} {float(t[0][0])} {float(t[1][0])} {float(t[2][0])} {float(q[0])} {float(q[1])} {float(q[2])} {float(q[3])}\n")
 
 
             except Exception as e:
@@ -88,6 +88,8 @@ def main():
                 time.sleep(max(0, delay))
             except Exception as e:
                 print(f"Error converting image: {e}")
+    f.close()       
+            
     return
 
 if __name__ == '__main__':
